@@ -7,15 +7,16 @@ hint.addEventListener("mouseout", function () {
 });
 
 hint.addEventListener("click", function () {
-    if(window.location.toString().includes("page1")){
-
-        document.querySelector(".err").innerText = "التلمح ان هذا الانمي عمك";
-        document.querySelector(".err").style.color = "green";
-    }else if(window.location.toString().includes("page2")){
-
-        document.querySelector(".err").innerText = "موت بالانجليزي ايش؟";
-        document.querySelector(".err").style.color = "green";
-    }
+  if (window.location.toString().includes("page1")) {
+    document.querySelector(".err").innerText = "التلمح ان هذا الانمي عمك";
+    document.querySelector(".err").style.color = "green";
+  } else if (window.location.toString().includes("page2")) {
+    document.querySelector(".err").innerText = "موت بالانجليزي ايش؟";
+    document.querySelector(".err").style.color = "green";
+  }else if (window.location.toString().includes("page3")) {
+    document.querySelector(".err").innerText = "ما احس تحتاج تميح بس معليه التلميح هو اكثر انمي فيه صراخ";
+    document.querySelector(".err").style.color = "green";
+  }
 });
 
 let answerPage1 = document.querySelector(".answer_page1");
@@ -30,20 +31,38 @@ let answerButton = document.querySelector(".next");
 
 // };
 
+//one paece
 answerButton.addEventListener("click", function (e) {
   if (answerPage1.value == "ون بيس" || answerPage1.value == "ونبيس") {
     answerPage1.value = "";
-    window.location="./anime_easy_page2.html"
+    window.location = "./anime_easy_page2.html";
   } else {
     document.querySelector(".err").innerText = "غلط عليك حاول مره ثانية";
     document.querySelector(".err").style.color = "red";
     e.preventDefault();
   }
 });
+//death note
 answerButton.addEventListener("click", function (e) {
   if (answerPage2.value == "ديث نوت" || answerPage2.value == "ديثنوت") {
     answerPage2.value = "";
-    window.location="./anime_easy_page3.html"
+    window.location = "./anime_easy_page3.html";
+  } else {
+    document.querySelector(".err").innerText = "غلط عليك حاول مره ثانية";
+    document.querySelector(".err").style.color = "red";
+    e.preventDefault();
+  }
+});
+//dragon
+answerButton.addEventListener("click", function (e) {
+  if (
+    answerPage3.value == "دراقون بول" ||
+    answerPage3.value == "دراجون بول" ||
+    answerPage3.value == "دراجونبول" ||
+    answerPage3.value == "دراقونبول"
+  ) {
+    answerPage3.value = "";
+    window.location = "./anime_easy_page4.html";
   } else {
     document.querySelector(".err").innerText = "غلط عليك حاول مره ثانية";
     document.querySelector(".err").style.color = "red";
@@ -52,5 +71,7 @@ answerButton.addEventListener("click", function (e) {
 });
 
 setTimeout(() => {
-  document.querySelector(".left-right").innerHTML = `<i class="fa-solid fa-face-laugh-squint me-2"></i>هذي سهلة وما جبتها باقي`;
+  document.querySelector(
+    ".left-right"
+  ).innerHTML = `<i class="fa-solid fa-face-laugh-squint me-2"></i>هذي سهلة وما جبتها باقي`;
 }, "5000");
