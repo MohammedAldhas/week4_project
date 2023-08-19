@@ -13,13 +13,13 @@ if (window.location.toString().includes("easy")) {
     document.querySelector(
       ".left-right"
     ).innerHTML = `<i class="fa-solid fa-face-laugh-squint me-2"></i>هذي سهلة وما جبتها باقي`;
-  }, "9000");
+  }, "10000");
 } else if (window.location.toString().includes("medium")) {
   setTimeout(() => {
     document.querySelector(
       ".left-right"
     ).innerHTML = `<i class="fa-solid fa-fire-flame-curved"></i> ادري تحسها صعبة بس حاول يا بطل`;
-  }, "5000");
+  }, "15000");
 }
 
 hint.addEventListener("click", function () {
@@ -60,12 +60,12 @@ hint.addEventListener("click", function () {
       document.querySelector(".err").style.color = "green";
     } else if (window.location.toString().includes("medium_page5")) {
       document.querySelector(".err").innerText =
-        "حتى انا حسيتها صعبة , التلميح هو فن و اونلاين";
+      "حتى انا حسيتها صعبة , التلميح هو فن و اونلاين";
       document.querySelector(".err").style.color = "green";
     }
   }
+  
 
-  // medium
 });
 
 let answerPage1 = document.querySelector(".answer_page1");
@@ -80,16 +80,6 @@ let answerMediumPage4 = document.querySelector(".answer_medium_page4");
 let answerMediumPage5 = document.querySelector(".answer_medium_page5");
 let answerButton = document.querySelector(".next");
 
-// answer.onfocus = function () {
-//     document.querySelector(".err").innerText =
-//       "حاول تفصل كل صورة وتجمعها مع بعض";
-//     document.querySelector(".err").style.color = "black";
-
-// };
-
-// document.querySelector(".ttl .total span").innerText =
-// window.localStorage.getItem("counter");
-//Counter
 
 let midCounter = 0;
 let counter = document.querySelector(".card .counter span");
@@ -368,14 +358,12 @@ answerButton.addEventListener("click", function (e) {
     answerMediumPage5.value = "";
     document.querySelector(".left-right").innerText = "حليتها كلها برافوو";
     document.querySelector(".left-right").style.color = "Blue";
-
-    // counter.innerText = window.localStorage.getItem("counter");
-    // midCounter++;
-    // window.localStorage.setItem("counter", midCounter);
-    // counter.innerText = window.localStorage.getItem("counter");
-
+    counter.innerText = window.localStorage.getItem("counter");
+    midCounter++;
+    window.localStorage.setItem("counter", midCounter);
+    counter.innerText = window.localStorage.getItem("counter");
     setTimeout(() => {
-      location = "./end_movies.html";
+      window.location = "../end.html";
     }, "2000");
   } else {
     document.querySelector(".err").innerText = "غلط عليك حاول مره ثانية";
@@ -383,7 +371,3 @@ answerButton.addEventListener("click", function (e) {
     e.preventDefault();
   }
 });
-
-// if (window.location.toString().includes("endMovies")) {
-//   console.log("yes");
-// }

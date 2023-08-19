@@ -11,13 +11,13 @@ if (window.location.toString().includes("easy")) {
     document.querySelector(
       ".left-right"
     ).innerHTML = `<i class="fa-solid fa-face-laugh-squint me-2"></i>هذي سهلة وما جبتها باقي`;
-  }, "8000");
+  }, "10000");
 } else if (window.location.toString().includes("medium")) {
   setTimeout(() => {
     document.querySelector(
       ".left-right"
     ).innerHTML = `<i class="fa-solid fa-fire-flame-curved"></i> ادري تحسها صعبة بس حاول يا بطل`;
-  }, "5000");
+  }, "15000");
 }
 
 hint.addEventListener("click", function () {
@@ -42,6 +42,7 @@ hint.addEventListener("click", function () {
         "اخر سؤال يا هوه مافي مشكلة طابور كيو";
       document.querySelector(".err").style.color = "green";
     }
+    // medium
   } else if (window.location.toString().includes("medium")) {
     if (window.location.toString().includes("medium_page1")) {
       document.querySelector(".err").innerText = "قد لمعت عيناه";
@@ -62,8 +63,6 @@ hint.addEventListener("click", function () {
       document.querySelector(".err").style.color = "green";
     }
   }
-
-  // medium
 });
 
 let answerPage1 = document.querySelector(".answer_page1");
@@ -78,19 +77,37 @@ let answerMediumPage4 = document.querySelector(".answer_medium_page4");
 let answerMediumPage5 = document.querySelector(".answer_medium_page5");
 let answerButton = document.querySelector(".next");
 
-// answer.onfocus = function () {
-//     document.querySelector(".err").innerText =
-//       "حاول تفصل كل صورة وتجمعها مع بعض";
-//     document.querySelector(".err").style.color = "black";
+let midCounter = 0;
+let counter = document.querySelector(".card .counter span");
 
-// };
+if (window.localStorage.getItem("counter") != undefined) {
+  midCounter = window.localStorage.getItem("counter");
+  counter.innerText = window.localStorage.getItem("counter");
 
+  localStorage.clear();
+} else {
+  window.localStorage.setItem("counter", midCounter);
+  counter.innerText = window.localStorage.getItem("counter");
+}
 // ===========================easy=======================
 //one paece
 answerButton.addEventListener("click", function (e) {
-  if (answerPage1.value == "ون بيس" || answerPage1.value == "ونبيس") {
+  if (
+    answerPage1.value == "ون بيس" ||
+    answerPage1.value == "ونبيس" ||
+    answerPage1.value == "onePaece" ||
+    answerPage1.value == "One Paece" ||
+    answerPage1.value == "One paece" ||
+    answerPage1.value == "one paece"
+  ) {
     answerPage1.value = "";
-    window.location = "./anime_easy_page2.html";
+    document.querySelector(".left-right").innerText = "كفو عليك";
+    document.querySelector(".left-right").style.color = "blue";
+
+    setTimeout(() => {
+      window.location = "./anime_easy_page2.html";
+      counter.innerText++;
+    }, "2000");
   } else {
     document.querySelector(".err").innerText = "غلط عليك حاول مره ثانية";
     document.querySelector(".err").style.color = "red";
@@ -99,9 +116,22 @@ answerButton.addEventListener("click", function (e) {
 });
 //death note
 answerButton.addEventListener("click", function (e) {
-  if (answerPage2.value == "ديث نوت" || answerPage2.value == "ديثنوت") {
-    answerPage2.value = "";
-    window.location = "./anime_easy_page3.html";
+  if (
+    answerPage2.value == "ديث نوت" ||
+    answerPage2.value == "ديثنوت" ||
+    answerPage2.value == "Death Note" ||
+    answerPage2.value == "Death note" ||
+    answerPage2.value == "death note" ||
+    answerPage2.value == "deathNote" 
+  ) {
+    answerPage1.value = "";
+    document.querySelector(".left-right").innerText = "اسطووورة";
+    document.querySelector(".left-right").style.color = "blue";
+
+    setTimeout(() => {
+      window.location = "./anime_easy_page3.html";
+      counter.innerText++;
+    }, "2000");
   } else {
     document.querySelector(".err").innerText = "غلط عليك حاول مره ثانية";
     document.querySelector(".err").style.color = "red";
@@ -114,10 +144,20 @@ answerButton.addEventListener("click", function (e) {
     answerPage3.value == "دراقون بول" ||
     answerPage3.value == "دراجون بول" ||
     answerPage3.value == "دراجونبول" ||
-    answerPage3.value == "دراقونبول"
+    answerPage3.value == "دراقونبول" ||
+    answerPage3.value == "Dragon Ball" ||
+    answerPage3.value == "Dragon ball" ||
+    answerPage3.value == "bragon ball" ||
+    answerPage3.value == "bragonBall"
   ) {
-    answerPage3.value = "";
-    window.location = "./anime_easy_page4.html";
+    answerPage1.value = "";
+    document.querySelector(".left-right").innerText = "صح عليييك";
+    document.querySelector(".left-right").style.color = "blue";
+
+    setTimeout(() => {
+      window.location = "./anime_easy_page4.html";
+      counter.innerText++;
+    }, "2000");
   } else {
     document.querySelector(".err").innerText = "غلط عليك حاول مره ثانية";
     document.querySelector(".err").style.color = "red";
@@ -132,10 +172,20 @@ answerButton.addEventListener("click", function (e) {
     answerPage4.value == "وان بانش مان" ||
     answerPage4.value == "ون بنتش مان" ||
     answerPage4.value == "وانبانشمان" ||
-    answerPage4.value == "ونبانشمان"
+    answerPage4.value == "ونبانشمان" ||
+    answerPage4.value == "One Punch Man" ||
+    answerPage4.value == "one punch man" ||
+    answerPage4.value == "OnePunchMan" ||
+    answerPage4.value == "onePunchMan" 
   ) {
-    answerPage4.value = "";
-    window.location = "./anime_easy_page5.html";
+    answerPage1.value = "";
+    document.querySelector(".left-right").innerText = "كفو قربت تخلص";
+    document.querySelector(".left-right").style.color = "blue";
+
+    setTimeout(() => {
+      window.location = "./anime_easy_page5.html";
+      counter.innerText++;
+    }, "2000");
   } else {
     document.querySelector(".err").innerText = "غلط عليك حاول مره ثانية";
     document.querySelector(".err").style.color = "red";
@@ -147,10 +197,17 @@ answerButton.addEventListener("click", function (e) {
   if (
     answerPage5.value == "هايكيو" ||
     answerPage5.value == "هيكيو" ||
-    answerPage5.value == "هاي كيو"
+    answerPage5.value == "هاي كيو" ||
+    answerPage5.value == "Haikyuu" ||
+    answerPage5.value == "haikyuu" 
   ) {
-    answerPage5.value = "";
-    window.location = "../end.html";
+    answerPage1.value = "";
+    document.querySelector(".left-right").innerText = "حليتها كلها برافوو";
+    document.querySelector(".left-right").style.color = "blue";
+
+    setTimeout(() => {
+      window.location = "../end.html";
+    }, "2000");
   } else {
     document.querySelector(".err").innerText = "غلط عليك حاول مره ثانية";
     document.querySelector(".err").style.color = "red";
@@ -171,7 +228,16 @@ answerButton.addEventListener("click", function (e) {
     answerMediumPage1.value == "هانتر اكس هانتر"
   ) {
     answerMediumPage1.value = "";
-    window.location = "./anime_medium_page2.html";
+    document.querySelector(".left-right").innerText = "كفو عليك";
+    document.querySelector(".left-right").style.color = "Blue";
+
+    midCounter++;
+    localStorage.setItem("counter", midCounter);
+    counter.innerText = localStorage.getItem("counter");
+
+    setTimeout(() => {
+      window.location = "./anime_medium_page2.html";
+    }, "2000");
   } else {
     document.querySelector(".err").innerText = "غلط عليك حاول مره ثانية";
     document.querySelector(".err").style.color = "red";
@@ -191,8 +257,17 @@ answerButton.addEventListener("click", function (e) {
     answerMediumPage2.value == "سباي اكس فميلي" ||
     answerMediumPage2.value == "سباي فاميلي"
   ) {
-    answerMediumPage2.value = "";
-    window.location = "./anime_medium_page3.html";
+    answerMediumPage1.value = "";
+    document.querySelector(".left-right").innerText = "اسطووورة";
+    document.querySelector(".left-right").style.color = "Blue";
+
+    midCounter++;
+    localStorage.setItem("counter", midCounter);
+    counter.innerText = localStorage.getItem("counter");
+
+    setTimeout(() => {
+      window.location = "./anime_medium_page3.html";
+    }, "2000");
   } else {
     document.querySelector(".err").innerText = "غلط عليك حاول مره ثانية";
     document.querySelector(".err").style.color = "red";
@@ -208,9 +283,17 @@ answerButton.addEventListener("click", function (e) {
     answerMediumPage3.value == "بلو لوك" ||
     answerMediumPage3.value == "بلولوك"
   ) {
-    answerMediumPage3.value = "";
-    window.location = "./anime_medium_page4.html";
-    console.log("yes");
+    answerMediumPage1.value = "";
+    document.querySelector(".left-right").innerText = "صح عليييك";
+    document.querySelector(".left-right").style.color = "Blue";
+
+    midCounter++;
+    localStorage.setItem("counter", midCounter);
+    counter.innerText = localStorage.getItem("counter");
+
+    setTimeout(() => {
+      window.location = "./anime_medium_page4.html";
+    }, "2000");
   } else {
     document.querySelector(".err").innerText = "غلط عليك حاول مره ثانية";
     document.querySelector(".err").style.color = "red";
@@ -220,6 +303,9 @@ answerButton.addEventListener("click", function (e) {
 // demon slayer
 answerButton.addEventListener("click", function (e) {
   if (
+    answerMediumPage4.value == "Kimetsu No Yaiba" ||
+    answerMediumPage4.value == "Kimetsu no yaiba" ||
+    answerMediumPage4.value == "kimetsu no yaiba" ||
     answerMediumPage4.value == "demon slayer" ||
     answerMediumPage4.value == "Demon slayer" ||
     answerMediumPage4.value == "Demon Slayer" ||
@@ -227,9 +313,17 @@ answerButton.addEventListener("click", function (e) {
     answerMediumPage4.value == "ديمون سلير" ||
     answerMediumPage4.value == "قاتل الشياطين"
   ) {
-    answerMediumPage4.value = "";
-    window.location = "./anime_medium_page5.html";
-    console.log("yes");
+    answerMediumPage1.value = "";
+    document.querySelector(".left-right").innerText = "كفو قربت تخلص";
+    document.querySelector(".left-right").style.color = "Blue";
+
+    midCounter++;
+    localStorage.setItem("counter", midCounter);
+    counter.innerText = localStorage.getItem("counter");
+
+    setTimeout(() => {
+      window.location = "./anime_medium_page5.html";
+    }, "2000");
   } else {
     document.querySelector(".err").innerText = "غلط عليك حاول مره ثانية";
     document.querySelector(".err").style.color = "red";
@@ -243,12 +337,18 @@ answerButton.addEventListener("click", function (e) {
     answerMediumPage5.value == "Sword art online" ||
     answerMediumPage5.value == "Sword Art Online" ||
     answerMediumPage5.value == "سورد ارت اونلاين" ||
-    answerMediumPage5.value == "سورد ارت اون لاين" 
-
+    answerMediumPage5.value == "سورد ارت اون لاين"
   ) {
     answerMediumPage5.value = "";
-    window.location = "../end.html";
-
+    document.querySelector(".left-right").innerText = "حليتها كلها برافوو";
+    document.querySelector(".left-right").style.color = "Blue";
+    counter.innerText = window.localStorage.getItem("counter");
+    midCounter++;
+    window.localStorage.setItem("counter", midCounter);
+    counter.innerText = window.localStorage.getItem("counter");
+    setTimeout(() => {
+      window.location = "../end.html";
+    }, "2000");
   } else {
     document.querySelector(".err").innerText = "غلط عليك حاول مره ثانية";
     document.querySelector(".err").style.color = "red";
