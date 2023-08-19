@@ -93,14 +93,23 @@ answerButton.addEventListener("click", function (e) {
   if (
     answerPage1.value == "breaking bad" ||
     answerPage1.value == "Breaking Bad" ||
-    answerPage1 == "Breaking bad" ||
-    answerPage1 == "بريكنج باد" ||
-    answerPage1 == "بريكنق باد" ||
-    answerPage1 == "بريكينج باد" ||
-    answerPage1 == "بريكينق باد"
+    answerPage1.value == "Breaking bad" ||
+    answerPage1.value == "بريكنج باد" ||
+    answerPage1.value == "بريكنق باد" ||
+    answerPage1.value == "بريكينج باد" ||
+    answerPage1.value == "بريكينق باد" ||
+    answerPage1.value == "بريكينقباد" ||
+    answerPage1.value == "بريكنقباد" ||
+    answerPage1.value == "بريكينجباد" ||
+    answerPage1.value == "بريكنجباد"
   ) {
     answerPage1.value = "";
-    window.location = "./anime_easy_page2.html";
+    document.querySelector(".left-right").innerText = "كفو عليك";
+    document.querySelector(".left-right").style.color = "blue";
+
+    setTimeout(() => {
+      window.location = "./movie_easy_page2.html";
+    }, "2000");
   } else {
     document.querySelector(".err").innerText = "غلط عليك حاول مره ثانية";
     document.querySelector(".err").style.color = "red";
@@ -119,7 +128,12 @@ answerButton.addEventListener("click", function (e) {
     answerPage2.value == "دكتر هاوس"
   ) {
     answerPage2.value = "";
-    window.location = "./anime_easy_page3.html";
+    document.querySelector(".left-right").innerText = "اسطووورة";
+    document.querySelector(".left-right").style.color = "Blue";
+
+    setTimeout(() => {
+      window.location = "./movie_easy_page3.html";
+    }, "2000");
   } else {
     document.querySelector(".err").innerText = "غلط عليك حاول مره ثانية";
     document.querySelector(".err").style.color = "red";
@@ -131,6 +145,7 @@ answerButton.addEventListener("click", function (e) {
   if (
     answerPage3.value == "The Dark Knight" ||
     answerPage3.value == "The dark knight" ||
+    answerPage3.value == "The dark knight" ||
     answerPage3.value == "ذا دارك نايت" ||
     answerPage3.value == "ذا دارك نايت" ||
     answerPage3.value == "ذادارك نايت" ||
@@ -138,7 +153,12 @@ answerButton.addEventListener("click", function (e) {
     answerPage3.value == "فارس الظلام"
   ) {
     answerPage3.value = "";
-    window.location = "./anime_easy_page4.html";
+    document.querySelector(".left-right").innerText = "صح عليييك";
+    document.querySelector(".left-right").style.color = "Blue";
+
+    setTimeout(() => {
+      window.location = "./movie_easy_page4.html";
+    }, "2000");
   } else {
     document.querySelector(".err").innerText = "غلط عليك حاول مره ثانية";
     document.querySelector(".err").style.color = "red";
@@ -156,7 +176,12 @@ answerButton.addEventListener("click", function (e) {
     answerPage4.value == "المكتب"
   ) {
     answerPage4.value = "";
-    window.location = "./anime_easy_page5.html";
+    document.querySelector(".left-right").innerText = "كفو قربت تخلص";
+    document.querySelector(".left-right").style.color = "Blue";
+
+    setTimeout(() => {
+      window.location = "./movie_easy_page5.html";
+    }, "2000");
   } else {
     document.querySelector(".err").innerText = "غلط عليك حاول مره ثانية";
     document.querySelector(".err").style.color = "red";
@@ -175,7 +200,12 @@ answerButton.addEventListener("click", function (e) {
     answerPage5.value == "حكاية لعبه"
   ) {
     answerPage5.value = "";
-    window.location = "../end.html";
+    document.querySelector(".left-right").innerText = "حليتها كلها برافوووو";
+    document.querySelector(".left-right").style.color = "Blue";
+
+    setTimeout(() => {
+      window.location = "../end.html";
+    }, "2000");
   } else {
     document.querySelector(".err").innerText = "غلط عليك حاول مره ثانية";
     document.querySelector(".err").style.color = "red";
@@ -184,94 +214,119 @@ answerButton.addEventListener("click", function (e) {
 });
 
 // ===========================Medium=======================
-// hunterXhunter
+// Note Book
 answerButton.addEventListener("click", function (e) {
   if (
-    answerMediumPage1.value == "hunterXhunter" ||
-    answerMediumPage1.value == "HunterXHunter" ||
-    answerMediumPage1.value == "hunterxhunter" ||
-    answerMediumPage1.value == "hunter x hunter" ||
-    answerMediumPage1.value == "القناص" ||
-    answerMediumPage1.value == "هنتر اكس هنتر" ||
-    answerMediumPage1.value == "هانتر اكس هانتر"
+    answerMediumPage1.value == "Note Book" ||
+    answerMediumPage1.value == "NoteBook" ||
+    answerMediumPage1.value == "Note book" ||
+    answerMediumPage1.value == "note book" ||
+    answerMediumPage1.value == "نوت بوك" ||
+    answerMediumPage1.value == "نوتبوك"
   ) {
     answerMediumPage1.value = "";
-    window.location = "./anime_medium_page2.html";
+    document.querySelector(".left-right").innerText = "كفو عليك";
+    document.querySelector(".left-right").style.color = "Blue";
+    setTimeout(() => {
+      window.location = "./movie_medium_page2.html";
+    }, "2000");
   } else {
     document.querySelector(".err").innerText = "غلط عليك حاول مره ثانية";
     document.querySelector(".err").style.color = "red";
     e.preventDefault();
   }
 });
-// spyXfamily
+// TopGun
 answerButton.addEventListener("click", function (e) {
   if (
-    answerMediumPage2.value == "spyXfamily" ||
-    answerMediumPage2.value == "SpyXFamily" ||
-    answerMediumPage2.value == "Spyxfamily" ||
-    answerMediumPage2.value == "spy x family" ||
-    answerMediumPage2.value == "Spy X Family" ||
-    answerMediumPage2.value == "سباي اكس فاميلي" ||
-    answerMediumPage2.value == "سبي اكس فميلي" ||
-    answerMediumPage2.value == "سباي اكس فميلي" ||
-    answerMediumPage2.value == "سباي فاميلي"
+    answerMediumPage2.value == "Top Gun" ||
+    answerMediumPage2.value == "Top gun" ||
+    answerMediumPage2.value == "top gun" ||
+    answerMediumPage2.value == "TopGun" ||
+    answerMediumPage2.value == "topGun" ||
+    answerMediumPage2.value == "توب قن" ||
+    answerMediumPage2.value == "توبقن" ||
+    answerMediumPage2.value == "تب قن"
   ) {
-    answerMediumPage2.value = "";
-    window.location = "./anime_medium_page3.html";
+    answerMediumPage1.value = "";
+    document.querySelector(".left-right").innerText = "اسطووورة";
+    document.querySelector(".left-right").style.color = "Blue";
+    setTimeout(() => {
+      window.location = "./movie_medium_page3.html";
+    }, "2000");
   } else {
     document.querySelector(".err").innerText = "غلط عليك حاول مره ثانية";
     document.querySelector(".err").style.color = "red";
     e.preventDefault();
   }
 });
-// blue lock
+// Suits
 answerButton.addEventListener("click", function (e) {
   if (
-    answerMediumPage3.value == "blue lock" ||
-    answerMediumPage3.value == "Blue lock" ||
-    answerMediumPage3.value == "Blue Lock" ||
-    answerMediumPage3.value == "بلو لوك" ||
-    answerMediumPage3.value == "بلولوك"
+    answerMediumPage3.value == "Suits" ||
+    answerMediumPage3.value == "suits" ||
+    answerMediumPage3.value == "سوتس" ||
+    answerMediumPage3.value == "دعاوي" ||
+    answerMediumPage3.value == "الدعاوي"
   ) {
-    answerMediumPage3.value = "";
-    window.location = "./anime_medium_page4.html";
-    console.log("yes");
+    answerMediumPage1.value = "";
+    document.querySelector(".left-right").innerText = "صح عليييك";
+    document.querySelector(".left-right").style.color = "Blue";
+    setTimeout(() => {
+      window.location = "./movie_medium_page4.html";
+    }, "2000");
   } else {
     document.querySelector(".err").innerText = "غلط عليك حاول مره ثانية";
     document.querySelector(".err").style.color = "red";
     e.preventDefault();
   }
 });
-// demon slayer
+// better call saul
 answerButton.addEventListener("click", function (e) {
   if (
-    answerMediumPage4.value == "demon slayer" ||
-    answerMediumPage4.value == "Demon slayer" ||
-    answerMediumPage4.value == "Demon Slayer" ||
-    answerMediumPage4.value == "ديمون سلاير" ||
-    answerMediumPage4.value == "ديمون سلير" ||
-    answerMediumPage4.value == "قاتل الشياطين"
+    answerMediumPage4.value == "Better Call Saul" ||
+    answerMediumPage4.value == "Better call saul" ||
+    answerMediumPage4.value == "better call saul" ||
+    answerMediumPage4.value == "بيتر كول سول" ||
+    answerMediumPage4.value == "من الافضل الاتصال بسول" ||
+    answerMediumPage4.value == "من الأفضل الإتصال بسول" ||
+    answerMediumPage4.value == "من الافضل الإتصال بسول"
   ) {
-    answerMediumPage4.value = "";
-    window.location = "./anime_medium_page5.html";
-    console.log("yes");
+    answerMediumPage1.value = "";
+    document.querySelector(".left-right").innerText = "كفو قربت تخلص";
+    document.querySelector(".left-right").style.color = "Blue";
+    setTimeout(() => {
+      window.location = "./movie_medium_page5.html";
+    }, "2000");
   } else {
     document.querySelector(".err").innerText = "غلط عليك حاول مره ثانية";
     document.querySelector(".err").style.color = "red";
     e.preventDefault();
   }
 });
-// sword art online
+// interstellar
 answerButton.addEventListener("click", function (e) {
   if (
-    answerMediumPage5.value == "sword art online" ||
-    answerMediumPage5.value == "Sword art online" ||
-    answerMediumPage5.value == "Sword Art Online" ||
-    answerMediumPage5.value == "سورد ارت اونلاين" ||
-    answerMediumPage5.value == "سورد ارت اون لاين"
+    answerMediumPage5.value == "Interstellar" ||
+    answerMediumPage5.value == "interstellar" ||
+    answerMediumPage5.value == "انتير ستلر" ||
+    answerMediumPage5.value == "انتر ستيلر" ||
+    answerMediumPage5.value == "انتير ستيلر" ||
+    answerMediumPage5.value == "إنتير ستيلر" ||
+    answerMediumPage5.value == "إنتر ستيلر" ||
+    answerMediumPage5.value == "إنتر ستلر" ||
+    answerMediumPage5.value == "إنتير ستلر" ||
+    answerMediumPage5.value == "إنتيرستيلر" ||
+    answerMediumPage5.value == "انتيرستيلر" ||
+    answerMediumPage5.value == "إنترستيلر" ||
+    answerMediumPage5.value == "إنترستلر"
   ) {
-    answerMediumPage5.value = "";
-    window.location = "../end.html";
+    answerMediumPage1.value = "";
+    document.querySelector(".left-right").innerText = "حليتها كلها برافوو";
+    document.querySelector(".left-right").style.color = "Blue";
+    setTimeout(() => {
+      window.location = "./movie_medium_page3.html";
+    }, "2000");
   } else {
     document.querySelector(".err").innerText = "غلط عليك حاول مره ثانية";
     document.querySelector(".err").style.color = "red";
