@@ -327,6 +327,7 @@ answerButton.addEventListener("click", function (e) {
     answerMediumPage4.value == "Better call saul" ||
     answerMediumPage4.value == "better call saul" ||
     answerMediumPage4.value == "بيتر كول سول" ||
+    answerMediumPage4.value == "بتر كول سول" ||
     answerMediumPage4.value == "من الافضل الاتصال بسول" ||
     answerMediumPage4.value == "من الأفضل الإتصال بسول" ||
     answerMediumPage4.value == "من الافضل الإتصال بسول"
