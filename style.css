@@ -45,3 +45,13 @@ body{
 .hard:hover{
     cursor: auto;
 }
+
+.card{
+    position: relative;
+}
+.card .counter{
+    position: absolute;
+    content: "";
+    top: 50px;
+    right: 20px;
+}

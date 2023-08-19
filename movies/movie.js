@@ -87,6 +87,23 @@ let answerButton = document.querySelector(".next");
 
 // };
 
+// document.querySelector(".ttl .total span").innerText =
+// window.localStorage.getItem("counter");
+//Counter
+
+let midCounter = 0;
+let counter = document.querySelector(".card .counter span");
+
+if (window.localStorage.getItem("counter") != undefined) {
+  midCounter = window.localStorage.getItem("counter");
+  counter.innerText = window.localStorage.getItem("counter");
+
+  localStorage.clear();
+} else {
+  window.localStorage.setItem("counter", midCounter);
+  counter.innerText = window.localStorage.getItem("counter");
+}
+
 // ===========================easy=======================
 //breaking bad
 answerButton.addEventListener("click", function (e) {
@@ -109,6 +126,7 @@ answerButton.addEventListener("click", function (e) {
 
     setTimeout(() => {
       window.location = "./movie_easy_page2.html";
+      counter.innerText++;
     }, "2000");
   } else {
     document.querySelector(".err").innerText = "غلط عليك حاول مره ثانية";
@@ -133,6 +151,7 @@ answerButton.addEventListener("click", function (e) {
 
     setTimeout(() => {
       window.location = "./movie_easy_page3.html";
+      counter.innerText++;
     }, "2000");
   } else {
     document.querySelector(".err").innerText = "غلط عليك حاول مره ثانية";
@@ -158,6 +177,7 @@ answerButton.addEventListener("click", function (e) {
 
     setTimeout(() => {
       window.location = "./movie_easy_page4.html";
+      counter.innerText++;
     }, "2000");
   } else {
     document.querySelector(".err").innerText = "غلط عليك حاول مره ثانية";
@@ -181,6 +201,7 @@ answerButton.addEventListener("click", function (e) {
 
     setTimeout(() => {
       window.location = "./movie_easy_page5.html";
+      counter.innerText++;
     }, "2000");
   } else {
     document.querySelector(".err").innerText = "غلط عليك حاول مره ثانية";
@@ -204,7 +225,7 @@ answerButton.addEventListener("click", function (e) {
     document.querySelector(".left-right").style.color = "Blue";
 
     setTimeout(() => {
-      window.location = "../end.html";
+      window.location = "./end_movies.html";
     }, "2000");
   } else {
     document.querySelector(".err").innerText = "غلط عليك حاول مره ثانية";
@@ -227,6 +248,11 @@ answerButton.addEventListener("click", function (e) {
     answerMediumPage1.value = "";
     document.querySelector(".left-right").innerText = "كفو عليك";
     document.querySelector(".left-right").style.color = "Blue";
+
+    midCounter++;
+    localStorage.setItem("counter", midCounter);
+    counter.innerText = localStorage.getItem("counter");
+
     setTimeout(() => {
       window.location = "./movie_medium_page2.html";
     }, "2000");
@@ -248,9 +274,15 @@ answerButton.addEventListener("click", function (e) {
     answerMediumPage2.value == "توبقن" ||
     answerMediumPage2.value == "تب قن"
   ) {
-    answerMediumPage1.value = "";
+    answerMediumPage2.value = "";
     document.querySelector(".left-right").innerText = "اسطووورة";
     document.querySelector(".left-right").style.color = "Blue";
+
+    counter.innerText = localStorage.getItem("counter");
+    midCounter++;
+    localStorage.setItem("counter", midCounter);
+    counter.innerText = localStorage.getItem("counter");
+
     setTimeout(() => {
       window.location = "./movie_medium_page3.html";
     }, "2000");
@@ -269,9 +301,15 @@ answerButton.addEventListener("click", function (e) {
     answerMediumPage3.value == "دعاوي" ||
     answerMediumPage3.value == "الدعاوي"
   ) {
-    answerMediumPage1.value = "";
+    answerMediumPage3.value = "";
     document.querySelector(".left-right").innerText = "صح عليييك";
     document.querySelector(".left-right").style.color = "Blue";
+
+    counter.innerText = localStorage.getItem("counter");
+    midCounter++;
+    localStorage.setItem("counter", midCounter);
+    counter.innerText = localStorage.getItem("counter");
+
     setTimeout(() => {
       window.location = "./movie_medium_page4.html";
     }, "2000");
@@ -292,9 +330,15 @@ answerButton.addEventListener("click", function (e) {
     answerMediumPage4.value == "من الأفضل الإتصال بسول" ||
     answerMediumPage4.value == "من الافضل الإتصال بسول"
   ) {
-    answerMediumPage1.value = "";
+    answerMediumPage4.value = "";
     document.querySelector(".left-right").innerText = "كفو قربت تخلص";
     document.querySelector(".left-right").style.color = "Blue";
+
+    counter.innerText = window.localStorage.getItem("counter");
+    midCounter++;
+    window.localStorage.setItem("counter", midCounter);
+    counter.innerText = window.localStorage.getItem("counter");
+
     setTimeout(() => {
       window.location = "./movie_medium_page5.html";
     }, "2000");
@@ -321,11 +365,17 @@ answerButton.addEventListener("click", function (e) {
     answerMediumPage5.value == "إنترستيلر" ||
     answerMediumPage5.value == "إنترستلر"
   ) {
-    answerMediumPage1.value = "";
+    answerMediumPage5.value = "";
     document.querySelector(".left-right").innerText = "حليتها كلها برافوو";
     document.querySelector(".left-right").style.color = "Blue";
+
+    // counter.innerText = window.localStorage.getItem("counter");
+    // midCounter++;
+    // window.localStorage.setItem("counter", midCounter);
+    // counter.innerText = window.localStorage.getItem("counter");
+
     setTimeout(() => {
-      window.location = "./movie_medium_page3.html";
+      location = "./end_movies.html";
     }, "2000");
   } else {
     document.querySelector(".err").innerText = "غلط عليك حاول مره ثانية";
@@ -333,3 +383,7 @@ answerButton.addEventListener("click", function (e) {
     e.preventDefault();
   }
 });
+
+// if (window.location.toString().includes("endMovies")) {
+//   console.log("yes");
+// }
