@@ -14,10 +14,10 @@ medium.addEventListener("mouseover", function () {
 medium.addEventListener("mouseout", function () {
   medium.innerText = "متوسطة";
 });
-hard.addEventListener("mouseover", function () {
-  hard.innerText = `خليناها اصعب من ناحية التخمين وضفنالك وقت قدها؟`;
-});
-hard.addEventListener("mouseout", function () {
-  hard.innerText = "صعب";
-});
+// hard.addEventListener("mouseover", function () {
+//   hard.innerText = `خليناها اصعب من ناحية التخمين وضفنالك وقت قدها؟`;
+// });
+// hard.addEventListener("mouseout", function () {
+//   hard.innerText = "صعب";
+// });
 

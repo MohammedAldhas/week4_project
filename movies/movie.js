@@ -7,11 +7,13 @@ hint.addEventListener("mouseout", function () {
 });
 
 if (window.location.toString().includes("easy")) {
+  document.querySelector(".left-right").innerHTML = "القراية من اليمين لليسار";
+
   setTimeout(() => {
     document.querySelector(
       ".left-right"
     ).innerHTML = `<i class="fa-solid fa-face-laugh-squint me-2"></i>هذي سهلة وما جبتها باقي`;
-  }, "8000");
+  }, "9000");
 } else if (window.location.toString().includes("medium")) {
   setTimeout(() => {
     document.querySelector(
@@ -22,26 +24,26 @@ if (window.location.toString().includes("easy")) {
 
 hint.addEventListener("click", function () {
   // easy
-
   if (window.location.toString().includes("easy")) {
     if (window.location.toString().includes("easy_page1")) {
-      document.querySelector(".err").innerText = "التلمح ان هذا الانمي عمك";
+      document.querySelector(".err").innerText = "Sey My Name";
       document.querySelector(".err").style.color = "green";
     } else if (window.location.toString().includes("easy_page2")) {
-      document.querySelector(".err").innerText = "موت بالانجليزي ايش؟";
+      document.querySelector(".err").innerText = "ترجم طبيب منزل";
       document.querySelector(".err").style.color = "green";
     } else if (window.location.toString().includes("easy_page3")) {
       document.querySelector(".err").innerText =
-        "ما احس تحتاج تلميح بس معليه التلميح هو اكثر انمي فيه صراخ";
+        "افضل سلسلة افلام, اسم الشخصية بروس وين";
       document.querySelector(".err").style.color = "green";
     } else if (window.location.toString().includes("easy_page4")) {
-      document.querySelector(".err").innerText = "اللي في النص بنش";
+      document.querySelector(".err").innerText =
+        "مسلسل كوميدي يصورون في المكتب";
       document.querySelector(".err").style.color = "green";
     } else if (window.location.toString().includes("easy_page5")) {
-      document.querySelector(".err").innerText =
-        "اخر سؤال يا هوه مافي مشكلة طابور كيو";
+      document.querySelector(".err").innerText = " فلم فيه دمى تتكلم";
       document.querySelector(".err").style.color = "green";
     }
+    // Medium
   } else if (window.location.toString().includes("medium")) {
     if (window.location.toString().includes("medium_page1")) {
       document.querySelector(".err").innerText = "قد لمعت عيناه";
@@ -86,9 +88,17 @@ let answerButton = document.querySelector(".next");
 // };
 
 // ===========================easy=======================
-//one paece
+//breaking bad
 answerButton.addEventListener("click", function (e) {
-  if (answerPage1.value == "ون بيس" || answerPage1.value == "ونبيس") {
+  if (
+    answerPage1.value == "breaking bad" ||
+    answerPage1.value == "Breaking Bad" ||
+    answerPage1 == "Breaking bad" ||
+    answerPage1 == "بريكنج باد" ||
+    answerPage1 == "بريكنق باد" ||
+    answerPage1 == "بريكينج باد" ||
+    answerPage1 == "بريكينق باد"
+  ) {
     answerPage1.value = "";
     window.location = "./anime_easy_page2.html";
   } else {
@@ -97,9 +107,17 @@ answerButton.addEventListener("click", function (e) {
     e.preventDefault();
   }
 });
-//death note
+//doctor house
 answerButton.addEventListener("click", function (e) {
-  if (answerPage2.value == "ديث نوت" || answerPage2.value == "ديثنوت") {
+  if (
+    answerPage2.value == "Doctor House" ||
+    answerPage2.value == "Doctor house" ||
+    answerPage2.value == "doctor house" ||
+    answerPage2.value == "دوكتور هاوس" ||
+    answerPage2.value == "دوكتر هاوس" ||
+    answerPage2.value == "دكتور هاوس" ||
+    answerPage2.value == "دكتر هاوس"
+  ) {
     answerPage2.value = "";
     window.location = "./anime_easy_page3.html";
   } else {
@@ -108,13 +126,16 @@ answerButton.addEventListener("click", function (e) {
     e.preventDefault();
   }
 });
-//dragon ball
+//the dark knight
 answerButton.addEventListener("click", function (e) {
   if (
-    answerPage3.value == "دراقون بول" ||
-    answerPage3.value == "دراجون بول" ||
-    answerPage3.value == "دراجونبول" ||
-    answerPage3.value == "دراقونبول"
+    answerPage3.value == "The Dark Knight" ||
+    answerPage3.value == "The dark knight" ||
+    answerPage3.value == "ذا دارك نايت" ||
+    answerPage3.value == "ذا دارك نايت" ||
+    answerPage3.value == "ذادارك نايت" ||
+    answerPage3.value == "ذدارك نايت" ||
+    answerPage3.value == "فارس الظلام"
   ) {
     answerPage3.value = "";
     window.location = "./anime_easy_page4.html";
@@ -124,15 +145,15 @@ answerButton.addEventListener("click", function (e) {
     e.preventDefault();
   }
 });
-//one punch man
+//the office
 answerButton.addEventListener("click", function (e) {
   if (
-    answerPage4.value == "ون بنش مان" ||
-    answerPage4.value == "ون بانش مان" ||
-    answerPage4.value == "وان بانش مان" ||
-    answerPage4.value == "ون بنتش مان" ||
-    answerPage4.value == "وانبانشمان" ||
-    answerPage4.value == "ونبانشمان"
+    answerPage4.value == "The Office" ||
+    answerPage4.value == "The office" ||
+    answerPage4.value == "the office" ||
+    answerPage4.value == "ذا اوفيس" ||
+    answerPage4.value == "ذا اوفس" ||
+    answerPage4.value == "المكتب"
   ) {
     answerPage4.value = "";
     window.location = "./anime_easy_page5.html";
@@ -142,12 +163,16 @@ answerButton.addEventListener("click", function (e) {
     e.preventDefault();
   }
 });
-// Hykuu
+// Toy story
 answerButton.addEventListener("click", function (e) {
   if (
-    answerPage5.value == "هايكيو" ||
-    answerPage5.value == "هيكيو" ||
-    answerPage5.value == "هاي كيو"
+    answerPage5.value == "Toy Story" ||
+    answerPage5.value == "Toy story" ||
+    answerPage5.value == "toy story" ||
+    answerPage5.value == "توي ستوري" ||
+    answerPage5.value == "تويستوري" ||
+    answerPage5.value == "حكاية لعبة" ||
+    answerPage5.value == "حكاية لعبه"
   ) {
     answerPage5.value = "";
     window.location = "../end.html";
@@ -243,12 +268,10 @@ answerButton.addEventListener("click", function (e) {
     answerMediumPage5.value == "Sword art online" ||
     answerMediumPage5.value == "Sword Art Online" ||
     answerMediumPage5.value == "سورد ارت اونلاين" ||
-    answerMediumPage5.value == "سورد ارت اون لاين" 
-
+    answerMediumPage5.value == "سورد ارت اون لاين"
   ) {
     answerMediumPage5.value = "";
     window.location = "../end.html";
-
   } else {
     document.querySelector(".err").innerText = "غلط عليك حاول مره ثانية";
     document.querySelector(".err").style.color = "red";

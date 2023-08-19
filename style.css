@@ -24,7 +24,13 @@ body{
     align-items: center;
 }
 .imges img{
-    width: 150px;
+    width: 140px;
+    margin: 0 5px;
+
+}
+
+.imges3 img{
+    width: 90px;
     margin: 0 5px;
 
 }
@@ -33,4 +39,9 @@ body{
     border: 1px solid #212529;
     box-shadow: none;
 
+}
+
+
+.hard:hover{
+    cursor: auto;
 }
