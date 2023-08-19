@@ -6,9 +6,8 @@ hint.addEventListener("mouseout", function () {
   hint.innerHTML = `<i class="fa-solid fa-face-smile-wink me-2" style="color: #000000;"></i>تلميح`;
 });
 
+document.querySelector(".left-right").innerHTML = "القراية من اليمين لليسار";
 if (window.location.toString().includes("easy")) {
-  document.querySelector(".left-right").innerHTML = "القراية من اليمين لليسار";
-
   setTimeout(() => {
     document.querySelector(
       ".left-right"
@@ -24,48 +23,46 @@ if (window.location.toString().includes("easy")) {
 
 hint.addEventListener("click", function () {
   // easy
-  if (window.location.toString().includes("easy")) {
-    if (window.location.toString().includes("easy_page1")) {
+  if (window.location.toString().includes("movie_easy")) {
+    if (window.location.toString().includes("movie_easy_page1")) {
       document.querySelector(".err").innerText = "Sey My Name";
       document.querySelector(".err").style.color = "green";
-    } else if (window.location.toString().includes("easy_page2")) {
+    } else if (window.location.toString().includes("movie_easy_page2")) {
       document.querySelector(".err").innerText = "ترجم طبيب منزل";
       document.querySelector(".err").style.color = "green";
-    } else if (window.location.toString().includes("easy_page3")) {
+    } else if (window.location.toString().includes("movie_easy_page3")) {
       document.querySelector(".err").innerText =
         "افضل سلسلة افلام, اسم الشخصية بروس وين";
       document.querySelector(".err").style.color = "green";
-    } else if (window.location.toString().includes("easy_page4")) {
+    } else if (window.location.toString().includes("movie_easy_page4")) {
       document.querySelector(".err").innerText =
         "مسلسل كوميدي يصورون في المكتب";
       document.querySelector(".err").style.color = "green";
-    } else if (window.location.toString().includes("easy_page5")) {
+    } else if (window.location.toString().includes("movie_easy_page5")) {
       document.querySelector(".err").innerText = " فلم فيه دمى تتكلم";
       document.querySelector(".err").style.color = "green";
     }
     // Medium
-  } else if (window.location.toString().includes("medium")) {
-    if (window.location.toString().includes("medium_page1")) {
-      document.querySelector(".err").innerText = "قد لمعت عيناه";
+  } else if (window.location.toString().includes("movie_medium")) {
+    if (window.location.toString().includes("movie_medium_page1")) {
+      document.querySelector(".err").innerText = "أشهر فليم رومانسي";
       document.querySelector(".err").style.color = "green";
-    } else if (window.location.toString().includes("medium_page2")) {
-      document.querySelector(".err").innerText = "جاسوس بالانجليزي ايش؟";
+    } else if (window.location.toString().includes("movie_medium_page2")) {
+      document.querySelector(".err").innerText = "ترجم قمة";
       document.querySelector(".err").style.color = "green";
-    } else if (window.location.toString().includes("medium_page3")) {
-      document.querySelector(".err").innerText = "انمي رياضي جديد";
+    } else if (window.location.toString().includes("movie_medium_page3")) {
+      document.querySelector(".err").innerText = "بدلة بالانجليزي ايش اجمعهم";
       document.querySelector(".err").style.color = "green";
-    } else if (window.location.toString().includes("medium_page4")) {
+    } else if (window.location.toString().includes("movie_medium_page4")) {
       document.querySelector(".err").innerText =
-        "حرام عليك تستخدم تلميح, افضل انمي تحريك والوان";
+        "اخر صورة روح";
       document.querySelector(".err").style.color = "green";
-    } else if (window.location.toString().includes("medium_page5")) {
+    } else if (window.location.toString().includes("movie_medium_page5")) {
       document.querySelector(".err").innerText =
-      "حتى انا حسيتها صعبة , التلميح هو فن و اونلاين";
+        "حتى انا حسيتها صعبة , فلم يلحس المخ ويحبونة كثييير";
       document.querySelector(".err").style.color = "green";
     }
   }
-  
-
 });
 
 let answerPage1 = document.querySelector(".answer_page1");
@@ -80,15 +77,12 @@ let answerMediumPage4 = document.querySelector(".answer_medium_page4");
 let answerMediumPage5 = document.querySelector(".answer_medium_page5");
 let answerButton = document.querySelector(".next");
 
-
 let midCounter = 0;
 let counter = document.querySelector(".card .counter span");
 
 if (window.localStorage.getItem("counter") != undefined) {
   midCounter = window.localStorage.getItem("counter");
   counter.innerText = window.localStorage.getItem("counter");
-
-  localStorage.clear();
 } else {
   window.localStorage.setItem("counter", midCounter);
   counter.innerText = window.localStorage.getItem("counter");
@@ -114,9 +108,12 @@ answerButton.addEventListener("click", function (e) {
     document.querySelector(".left-right").innerText = "كفو عليك";
     document.querySelector(".left-right").style.color = "blue";
 
+    midCounter++;
+    localStorage.setItem("counter", midCounter);
+    counter.innerText = localStorage.getItem("counter");
+
     setTimeout(() => {
       window.location = "./movie_easy_page2.html";
-      counter.innerText++;
     }, "2000");
   } else {
     document.querySelector(".err").innerText = "غلط عليك حاول مره ثانية";
@@ -139,9 +136,12 @@ answerButton.addEventListener("click", function (e) {
     document.querySelector(".left-right").innerText = "اسطووورة";
     document.querySelector(".left-right").style.color = "Blue";
 
+    midCounter++;
+    localStorage.setItem("counter", midCounter);
+    counter.innerText = localStorage.getItem("counter");
+
     setTimeout(() => {
       window.location = "./movie_easy_page3.html";
-      counter.innerText++;
     }, "2000");
   } else {
     document.querySelector(".err").innerText = "غلط عليك حاول مره ثانية";
@@ -165,9 +165,12 @@ answerButton.addEventListener("click", function (e) {
     document.querySelector(".left-right").innerText = "صح عليييك";
     document.querySelector(".left-right").style.color = "Blue";
 
+    midCounter++;
+    localStorage.setItem("counter", midCounter);
+    counter.innerText = localStorage.getItem("counter");
+
     setTimeout(() => {
       window.location = "./movie_easy_page4.html";
-      counter.innerText++;
     }, "2000");
   } else {
     document.querySelector(".err").innerText = "غلط عليك حاول مره ثانية";
@@ -189,9 +192,12 @@ answerButton.addEventListener("click", function (e) {
     document.querySelector(".left-right").innerText = "كفو قربت تخلص";
     document.querySelector(".left-right").style.color = "Blue";
 
+    midCounter++;
+    localStorage.setItem("counter", midCounter);
+    counter.innerText = localStorage.getItem("counter");
+
     setTimeout(() => {
       window.location = "./movie_easy_page5.html";
-      counter.innerText++;
     }, "2000");
   } else {
     document.querySelector(".err").innerText = "غلط عليك حاول مره ثانية";
@@ -214,8 +220,13 @@ answerButton.addEventListener("click", function (e) {
     document.querySelector(".left-right").innerText = "حليتها كلها برافوووو";
     document.querySelector(".left-right").style.color = "Blue";
 
+    midCounter++;
+    localStorage.setItem("counter", midCounter);
+    counter.innerText = localStorage.getItem("counter");
+    localStorage.clear();
+
     setTimeout(() => {
-      window.location = "./end_movies.html";
+      window.location = "../end.html";
     }, "2000");
   } else {
     document.querySelector(".err").innerText = "غلط عليك حاول مره ثانية";
@@ -358,10 +369,12 @@ answerButton.addEventListener("click", function (e) {
     answerMediumPage5.value = "";
     document.querySelector(".left-right").innerText = "حليتها كلها برافوو";
     document.querySelector(".left-right").style.color = "Blue";
-    counter.innerText = window.localStorage.getItem("counter");
+    // counter.innerText = window.localStorage.getItem("counter");
     midCounter++;
+
     window.localStorage.setItem("counter", midCounter);
     counter.innerText = window.localStorage.getItem("counter");
+    localStorage.clear();
     setTimeout(() => {
       window.location = "../end.html";
     }, "2000");

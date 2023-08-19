@@ -21,3 +21,6 @@ medium.addEventListener("mouseout", function () {
 //   hard.innerText = "صعب";
 // });
 
+document
+  .querySelector(".home")
+  .addEventListener("click", () => localStorage.clear());
