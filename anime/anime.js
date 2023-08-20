@@ -13,13 +13,13 @@ if (window.location.toString().includes("easy")) {
     document.querySelector(
       ".left-right"
     ).innerHTML = `<i class="fa-solid fa-face-laugh-squint me-2"></i>هذي سهلة وما جبتها باقي`;
-  }, "10000");
+  }, "20000");
 } else if (window.location.toString().includes("medium")) {
   setTimeout(() => {
     document.querySelector(
       ".left-right"
     ).innerHTML = `<i class="fa-solid fa-fire-flame-curved"></i> ادري تحسها صعبة بس حاول يا بطل`;
-  }, "15000");
+  }, "20000");
 }
 
 hint.addEventListener("click", function () {

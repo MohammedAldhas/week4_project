@@ -50,3 +50,18 @@ body {
   left: 50%;
   transform: translateX(-50%);
 }
+
+.mid {
+  background-color: #284a76d5;
+}
+
+.card {
+  background-color: #d4d9dfc0;
+}
+
+button i {
+  margin: 0 5px;
+}
+.txt2 {
+  line-height: 8px;
+}
